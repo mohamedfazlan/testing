@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/logo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Mohamed Fazlan</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Mohamed Fazlan.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#Service">Service</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="home-info">
+            <h1>Mohamed Fazlan</h1>
+            <h2 data-text="I'm a UI/UX Designer">I'm a UI/UX Designer</h2>
+            <p class="about">Hi, I'm Mohamed Fazlan. I'm a UI/UX designer who loves making websites and
+                apps easy to use and visually attractive. I enjoy turning ideas into
+                simple, beautiful designs that work well for users. Let's create something great together!</p>
+
+            <!-- Updated structure -->
+            <div class="btn-sci">
+                <div class="btn-container">
+                    <button class="btn">Download CV</button>
+                </div>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-fazlan45678/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.behance.net/Mohamed_Fazlan" target="_blank"><i class='bx bxl-behance'></i></a>
+                    <a href="https://www.instagram.com/easycodeworks/#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="image/profile2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li a');
+    
+        // Toggle the menu on click
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    
+        // Automatically hide the menu on resizing to a larger screen
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active'); // Ensure the menu is hidden on larger screens
+            }
+        });
+    
+        // Auto close the menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active'); // Close the menu on smaller screens
+                }
+            });
+        });
+    </script>
+    
+  
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Content -->
+            <div class="footer-section">
+                <h3>About Me</h3>
+                <p>
+                    Hi! I'm Mohamed Fazlan, a passionate UI/UX designer dedicated to creating seamless and visually
+                    appealing user experiences.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#Service">Service</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Me</h3>
+                <div class="social-icons">
+                    <a href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-fazlan45678/" target="_blank"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.behance.net/Mohamed_Fazlan" target="_blank"><i class='bx bxl-behance'></i></a>
+                    <a href="https://www.instagram.com/easycodeworks/#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Mohamed Fazlan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

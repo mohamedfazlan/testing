@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 5%; /* Adjust padding to allow some space on both sides */
+    display: flex;
+    background-color: rgba(75, 75, 75, 0.5); /* Transparent black background */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+.navbar .logo {
+    font-size: 1.875em;
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    transition: all 0.3s;
+}
+
+.navbar ul li a {
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover a {
+    color: rgb(114, 255, 220);
+}
+
+.navbar .bx-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links.active {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #111111;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em 0;
+    gap: 1em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 80px 10%;
+    color: white;
+}
+
+.home-info h1 {
+    font-size: 55px;
+}
+
+.home-info h2 {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.home-info p {
+    font-size: 16px;
+    margin: 10px 0 15px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.btn  {
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgb(114, 255, 220);
+    border: 2px solid rgb(114, 255, 220);
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    transition: 0.5s;
+    margin-top: 15px;
+}
+.btn1  {
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgb(114, 255, 220);
+    border: 2px solid rgb(114, 255, 220);
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    transition: 0.5s;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background: transparent;
+    color: rgb(114, 255, 220);
+}
+.btn1:hover {
+    background: transparent;
+    color: rgb(114, 255, 220);
+}
+
+.home-info .btn-sci .sci {
+    display: flex;
+    gap: 20px;
+}
+
+.sci a {
+    display: inline-flex;
+    padding: 8px;
+    margin-top: 15px;
+    border: 2px solid rgb(114, 255, 220);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(114, 255, 220);
+    transition: 0.5s;
+}
+
+.sci a:hover {
+    background: rgb(114, 255, 220);
+    color: black;
+}
+
+.home-img .img-box {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img .img-box .img-item img {
+    width: 85%;
+    mix-blend-mode:lighten;
+}
+
+/* Media Queries */
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10em 10em;
+    }
+
+    .navbar ul {
+        display: none;
+        
+    }
+    .navbar ul li {
+        padding-top: 15px;
+        
+    }
+
+    .navbar .bx-menu {
+        display: block;
+        
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img {
+        margin-top: 20px;
+    }
+
+    .home-info h1 {
+        font-size: 45px;
+        margin-top: 50px;
+    }
+
+    .home-info h2 {
+        font-size: 28px;
+    }
+
+    .home-info .btn-sci {
+        flex-direction: column; /* Stack the button and social icons vertically */
+        align-items: center; /* Center them horizontally */
+    }
+
+ 
+
+    .home-info .btn-sci .sci {
+        display: flex;
+        justify-content: center; /* Center the social icons */
+    }
+}
+
+
+.home-img .img-box {
+    position: relative;
+    width: 30vw; /* Adjust circle size */
+    height: 30vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: conic-gradient(
+        rgb(114, 255, 220),
+        transparent,
+        rgb(114, 255, 220)
+    ); /* Adds the gradient effect around the circle */
+    
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, rgb(114, 255, 220));
+    border-radius: 50%;
+    animation: rotate 6s linear infinite; /* Smooth rotation effect */
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Matches the overall background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    
+    }
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    top: 30px;
+    width: 85%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+
+}
+
+/* Animation for the circle rotation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Default Styles for Larger Screens */
+.navbar .bx-menu {
+    display: none; /* Hidden by default */
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 2em 2em;
+    }
+
+    .navbar ul {
+        display: none; /* Hide the navigation links on small screens */
+    }
+
+    .navbar .bx-menu {
+        display: block; /* Show the hamburger menu on small screens */
+    }
+}
+
+/* UI/UX Designer animation */
+h2 {
+    position: relative;
+    color: #000000;
+    -webkit-text-stroke: 0.1vw white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: rgb(114, 255, 220);
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: rgb(114, 255, 220);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: rgb(114, 255, 220);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #333333;
+    padding-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
